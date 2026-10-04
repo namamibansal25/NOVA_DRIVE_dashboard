@@ -36,22 +36,22 @@ def render_network_view(df_network, df_scorecard, df_crit, df_bus, df_evid):
     c_w1, c_w2 = st.columns(2)
     with c_w1:
         st.markdown("""
-        <div class="action-card-critical">
+        <div class="action-card-critical" style="background: #FFF8F8; border: 1px solid #FECDD3; border-left: 6px solid #E11D48; border-radius: 12px; padding: 20px 24px; margin-bottom: 18px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div>
                     <span class="pill pill-red"><span class="pill-dot"></span> Corporate Governance Illusion</span>
-                    <h4 style="margin: 5px 0 0 0; font-size: 15px; font-weight: 700; color: #0A2540;">The CommonSpan Dual-Sourcing Fiction</h4>
+                    <h4 style="margin: 6px 0 0 0; font-size: 16px; font-weight: 800; color: #0A2540;">The CommonSpan Dual-Sourcing Fiction</h4>
                 </div>
                 <div style="text-align: right;">
-                    <div style="font-size: 20px; font-weight: 800; color: #991B1B;">$1,144M</div>
-                    <div style="font-size: 10.5px; font-weight: 600; color: #64748B;">P1 & P2 Exposure</div>
+                    <div style="font-size: 22px; font-weight: 800; color: #E11D48;">$1,144M</div>
+                    <div style="font-size: 11px; font-weight: 700; color: #64748B;">P1 & P2 Exposure</div>
                 </div>
             </div>
             <p style="font-size: 13px; color: #334155; margin: 8px 0 0 0; line-height: 1.55;">
                 NovaDrive ostensibly dual-sources power assemblies <strong>M10 & M20</strong> across <strong>Aster Power (60%)</strong> and <strong>Boreal Power (40%)</strong>.<br>
                 Regulatory disclosure <code>DOC-075</code> confirms both entities are <strong>100% owned subsidiaries of CommonSpan Holdings</strong>. Distress or debt default at the parent halts assembly across both suppliers simultaneously.
             </p>
-            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #FEE2E2; font-size: 12px; color: #7F1D1D; font-weight: 600;">
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #FECDD3; font-size: 12.5px; color: #9F1239; font-weight: 700;">
                 CRO Mandate: Require independent bank ring-fencing guarantees or qualify an un-affiliated module supplier.
             </div>
         </div>
@@ -59,15 +59,15 @@ def render_network_view(df_network, df_scorecard, df_crit, df_bus, df_evid):
 
     with c_w2:
         st.markdown("""
-        <div class="action-card-warning">
+        <div class="action-card-warning" style="background: #FFFDF7; border: 1px solid #FDE68A; border-left: 6px solid #D97706; border-radius: 12px; padding: 20px 24px; margin-bottom: 18px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div>
                     <span class="pill pill-amber"><span class="pill-dot"></span> Sub-Tier Vulnerability</span>
-                    <h4 style="margin: 5px 0 0 0; font-size: 15px; font-weight: 700; color: #0A2540;">The Upstream Chokepoint Triad</h4>
+                    <h4 style="margin: 6px 0 0 0; font-size: 16px; font-weight: 800; color: #0A2540;">The Upstream Chokepoint Triad</h4>
                 </div>
                 <div style="text-align: right;">
-                    <div style="font-size: 20px; font-weight: 800; color: #B45309;">$1,560M</div>
-                    <div style="font-size: 10.5px; font-weight: 600; color: #64748B;">100% Portfolio Reach</div>
+                    <div style="font-size: 22px; font-weight: 800; color: #D97706;">$1,560M</div>
+                    <div style="font-size: 11px; font-weight: 700; color: #64748B;">100% Portfolio Reach</div>
                 </div>
             </div>
             <p style="font-size: 13px; color: #334155; margin: 8px 0 0 0; line-height: 1.55;">
@@ -75,7 +75,7 @@ def render_network_view(df_network, df_scorecard, df_crit, df_bus, df_evid):
                 <strong>Jade Printed Circuits (Tier-2):</strong> Sole bare PCB supplier for C10 & B10 ($1,560M reach).<br>
                 <strong>Meridian Dielectrics (Tier-3):</strong> Sole BOPP film supplier ($624M reach, debt distress <code>EV-003</code>).
             </p>
-            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #FEF3C7; font-size: 12px; color: #92400E; font-weight: 600;">
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #FDE68A; font-size: 12.5px; color: #92400E; font-weight: 700;">
                 CRO Mandate: Audit off-site forward buffer inventory and initiate dual-sourcing sprints.
             </div>
         </div>
@@ -279,23 +279,28 @@ def render_network_view(df_network, df_scorecard, df_crit, df_bus, df_evid):
     for idx, c_item in enumerate(crit_entities):
         col = c_rows[idx % 2]
         with col:
+            card_border = "#FECDD3" if "red" in c_item['badge'] else "#FDE68A"
+            card_accent = "#E11D48" if "red" in c_item['badge'] else "#D97706"
+            card_bg = "#FFF8F8" if "red" in c_item['badge'] else "#FFFDF7"
+            rev_color = "#E11D48" if "red" in c_item['badge'] else "#D97706"
+
             st.markdown(f"""
-            <div class="action-card">
+            <div class="action-card" style="background: {card_bg}; border: 1px solid {card_border}; border-left: 6px solid {card_accent}; border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                     <div>
                         <span class="pill {c_item['badge']}"><span class="pill-dot"></span> {c_item['badge_text']}</span>
-                        <h4 style="margin: 6px 0 0 0; font-size: 15px; font-weight: 700; color: #0A2540;">{c_item['name']} ({c_item['id']})</h4>
-                        <div style="font-size: 12px; color: #64748B; margin-top: 2px;">{c_item['tier']} | Feeds: {c_item['comp']}</div>
+                        <h4 style="margin: 6px 0 0 0; font-size: 16px; font-weight: 800; color: #0A2540;">{c_item['name']} ({c_item['id']})</h4>
+                        <div style="font-size: 12.5px; color: #64748B; margin-top: 3px;">{c_item['tier']} | Feeds: {c_item['comp']}</div>
                     </div>
                     <div style="text-align: right;">
-                        <div style="font-size: 18px; font-weight: 800; color: #0A2540;">{c_item['rev']}</div>
-                        <div style="font-size: 10px; font-weight: 600; color: #64748B;">Revenue At Risk</div>
+                        <div style="font-size: 20px; font-weight: 800; color: {rev_color};">{c_item['rev']}</div>
+                        <div style="font-size: 10.5px; font-weight: 700; color: #64748B;">Revenue At Risk</div>
                     </div>
                 </div>
-                <div style="margin-top: 10px; font-size: 12.5px; color: #334155; line-height: 1.5;">
+                <div style="margin-top: 10px; font-size: 13px; color: #1E293B; line-height: 1.5;">
                     <strong>Root Cause:</strong> {c_item['cause']}
                 </div>
-                <div style="margin-top: 6px; font-size: 11.5px; color: #64748B;">
+                <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid {card_border}; font-size: 12px; color: #475569;">
                     <strong>Evidence Dossier:</strong> <code>{c_item['evidence']}</code>
                 </div>
             </div>

@@ -101,40 +101,45 @@ def render_alerts_view(df_events, df_flood, df_excluded, df_scorecard, df_evid):
             dup_ctrl = ev.get("False Positive / Duplication Control", "")
             src_fam = ev.get("Source Family ID", "")
 
-            # Styling classes
             if "HIGH" in prio or "CRITICAL" in prio:
-                card_cls = "action-card-critical"
+                card_border = "#FECDD3"
+                card_accent = "#E11D48"
+                card_bg = "#FFF8F8"
                 pill_cls = "pill-red"
             elif "DUPLICATE" in prio or "INFORMATIONAL" in prio:
-                card_cls = "action-card"
+                card_border = "#CBD5E1"
+                card_accent = "#64748B"
+                card_bg = "#F8FAFC"
                 pill_cls = "pill-gray"
             else:
-                card_cls = "action-card-warning"
+                card_border = "#FDE68A"
+                card_accent = "#D97706"
+                card_bg = "#FFFDF7"
                 pill_cls = "pill-amber"
 
             st.markdown(f"""
-            <div class="{card_cls}">
+            <div class="action-card" style="background: {card_bg}; border: 1px solid {card_border}; border-left: 6px solid {card_accent}; border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
                     <div>
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                             <span class="pill {pill_cls}"><span class="pill-dot"></span> {prio}</span>
-                            <span style="font-size: 11.5px; color: #64748B; font-weight: 600;">ID: {ev_id}</span>
+                            <span style="font-size: 11.5px; color: #64748B; font-weight: 700;">ID: {ev_id}</span>
                             <span style="color: #CBD5E1;">|</span>
-                            <span style="font-size: 11.5px; color: #64748B;">SOURCE: <code>{src_fam}</code></span>
+                            <span style="font-size: 11.5px; color: #64748B; font-weight: 600;">SOURCE: <code>{src_fam}</code></span>
                         </div>
-                        <h4 style="margin: 0; font-size: 15px; font-weight: 700; color: #0A2540;">{title}</h4>
+                        <h4 style="margin: 0; font-size: 16px; font-weight: 800; color: #0A2540;">{title}</h4>
                     </div>
                     <div style="text-align: right;">
-                        <span style="font-size: 12px; font-weight: 700; color: #0A2540;">Products: {prods_aff}</span><br>
+                        <span style="font-size: 12.5px; font-weight: 700; color: #0A2540;">Products: {prods_aff}</span><br>
                         <span style="font-size: 11.5px; color: #64748B;">Components: {comps_aff}</span>
                     </div>
                 </div>
-                <p style="margin: 8px 0 6px 0; font-size: 12.5px; color: #334155; line-height: 1.55;">{detail}</p>
-                <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 12px; border-radius: 6px; margin-top: 6px; font-size: 12px; color: #1E293B;">
-                    <strong>Match & Significance Assessment:</strong> {match_res}
+                <p style="margin: 8px 0 6px 0; font-size: 13px; color: #334155; line-height: 1.55;">{detail}</p>
+                <div style="background-color: #FFFFFF; border: 1px solid {card_border}; padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 12px; color: #1E293B;">
+                    <strong>Match & Significance:</strong> {match_res}
                 </div>
-                <div style="margin-top: 8px; font-size: 12.5px; color: #0A2540; font-weight: 600;">
-                    CRO Action: {action}
+                <div style="margin-top: 10px; font-size: 13px; color: #0A2540; font-weight: 700;">
+                    CRO Mandate: {action}
                 </div>
                 <div style="margin-top: 4px; font-size: 11.5px; color: #64748B;">
                     <strong>Deduplication Control:</strong> {dup_ctrl}
