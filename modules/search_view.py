@@ -154,11 +154,15 @@ def render_alternate_search(df_alts, df_comp, df_rules=None):
             font=dict(family="Plus Jakarta Sans", size=10.5, color="#0066CC")
         )
 
+        st.markdown("""
+        <div style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 18px 4px 18px; margin-top: 10px; margin-bottom: 2px;">
+            <div style="font-size: 14.5px; font-weight: 800; color: #0A2540;">Strategic Sourcing Decision Matrix: Fitment Score vs. Qualification Runway</div>
+            <div style="font-size: 12px; color: #64748B;">Quadrant mapping of market alternates evaluating engineering fit against required PPAP dyno test lead time.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
         fig_quad.update_layout(
-            title=dict(
-                text="<b>Strategic Sourcing Decision Matrix: Fitment Score vs. Qualification Runway</b>",
-                font=dict(size=13.5, color="#0A2540", family="Plus Jakarta Sans")
-            ),
+            title=None,
             xaxis=dict(
                 title="Estimated Re-qualification Runway (Weeks to PPAP)",
                 range=[8, 20],
@@ -171,8 +175,8 @@ def render_alternate_search(df_alts, df_comp, df_rules=None):
                 showgrid=True,
                 gridcolor="#F1F5F9"
             ),
-            height=340,
-            margin=dict(l=15, r=15, t=40, b=25),
+            height=320,
+            margin=dict(l=15, r=15, t=10, b=25),
             plot_bgcolor="#FFFFFF",
             paper_bgcolor="#FFFFFF",
             font=dict(family="Plus Jakarta Sans", size=11, color="#334155"),

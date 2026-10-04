@@ -174,13 +174,17 @@ def render_alerts_view(df_events, df_flood, df_excluded, df_scorecard, df_evid):
                 hovertemplate="<b>%{y}</b><br>Revenue at Risk: $%{x}M<br>Alternate Qualified: None<extra></extra>"
             ))
 
+            st.markdown("""
+            <div style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 18px 4px 18px; margin-top: 10px; margin-bottom: 2px;">
+                <div style="font-size: 14.5px; font-weight: 800; color: #0A2540;">Dependent Enterprise Revenue Clustered in Zone Z01 Flood Plain ($M)</div>
+                <div style="font-size: 12px; color: #64748B;">Site-by-site revenue impact across five sole-source nodes residing in the East Delta basin.</div>
+            </div>
+            """, unsafe_allow_html=True)
+
             fig_z01.update_layout(
-                title=dict(
-                    text="<b>Dependent Enterprise Revenue Clustered in Zone Z01 Flood Plain ($M)</b>",
-                    font=dict(size=13, color="#0A2540", family="Plus Jakarta Sans")
-                ),
-                height=240,
-                margin=dict(l=15, r=15, t=35, b=20),
+                title=None,
+                height=220,
+                margin=dict(l=15, r=15, t=10, b=20),
                 xaxis=dict(range=[0, 1750], showgrid=True, gridcolor="#F1F5F9", title="Annual Dependent Turnover ($M)"),
                 yaxis=dict(showgrid=False, autorange="reversed"),
                 plot_bgcolor="#FFFFFF",

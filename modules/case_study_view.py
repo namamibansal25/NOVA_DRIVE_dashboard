@@ -280,13 +280,17 @@ def render_case_study_view(df_bus, df_scorecard, df_crit, df_flood, df_alts):
                     annotation_font=dict(size=10, family="Plus Jakarta Sans", color="#0A2540")
                 )
 
+                st.markdown("""
+                <div style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 18px 4px 18px; margin-top: 10px; margin-bottom: 2px;">
+                    <div style="font-size: 14.5px; font-weight: 800; color: #0A2540;">Cumulative Financial Damage Severance Curve ($M over 12 Weeks)</div>
+                    <div style="font-size: 12px; color: #64748B;">Stress simulation projecting revenue burn after safety stock buffer is exhausted.</div>
+                </div>
+                """, unsafe_allow_html=True)
+
                 fig_sim.update_layout(
-                    title=dict(
-                        text="<b>Cumulative Financial Damage Severance Curve ($M over 12 Weeks)</b>",
-                        font=dict(size=13, color="#0A2540", family="Plus Jakarta Sans")
-                    ),
+                    title=None,
                     height=240,
-                    margin=dict(l=15, r=15, t=35, b=20),
+                    margin=dict(l=15, r=15, t=15, b=20),
                     yaxis=dict(title="Cumulative USD ($M)", showgrid=True, gridcolor="#F1F5F9"),
                     xaxis=dict(showgrid=False),
                     plot_bgcolor="#FFFFFF",

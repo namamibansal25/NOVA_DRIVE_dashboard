@@ -1,0 +1,438 @@
+/* ==========================================================================
+   NOVADRIVE TECHNOLOGIES | CRO EXECUTIVE RESILIENCE COMMAND SUITE
+   High-Contrast, Lively, Executive-Grade Visual Design System
+   ========================================================================== */
+
+/* --- Global Canvas & Typography --- */
+html, body, [class*="css"], .stApp,
+div[data-testid="stMarkdownContainer"],
+div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stMarkdownContainer"] span,
+div[data-testid="stMarkdownContainer"] div,
+div[data-testid="stMarkdownContainer"] li,
+div[data-testid="stMarkdownContainer"] h1,
+div[data-testid="stMarkdownContainer"] h2,
+div[data-testid="stMarkdownContainer"] h3,
+div[data-testid="stMarkdownContainer"] h4,
+div[data-testid="stWidgetLabel"] label,
+.stTabs button,
+.stButton button,
+.stSelectbox,
+.stSlider {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, .stApp {
+    background-color: #F8FAFC !important;
+    color: #0F172A !important;
+}
+
+header[data-testid="stHeader"] {
+    background: transparent !important;
+    height: 0 !important;
+}
+
+.main .block-container {
+    padding-top: 1.25rem !important;
+    padding-bottom: 3.5rem !important;
+    max-width: 1440px !important;
+}
+
+code, pre {
+    font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace !important;
+    font-size: 11.5px !important;
+    background-color: #EEF2F6 !important;
+    color: #0A2540 !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    border: 1px solid #CBD5E1 !important;
+    font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   SIDEBAR: Deep Obsidian Command Pane (Guaranteed Dark Navy Contrast)
+   ========================================================================== */
+[data-testid="stSidebar"],
+[data-testid="stSidebarContent"],
+[data-testid="stSidebarUserContent"],
+section[data-testid="stSidebar"],
+section[data-testid="stSidebar"] > div {
+    background-color: #0A192F !important;
+    background-image: linear-gradient(180deg, #0A192F 0%, #061122 100%) !important;
+    color: #E2E8F0 !important;
+    border-right: 1px solid #1E2D4A !important;
+}
+
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3 {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] li {
+    color: #CBD5E1 !important;
+    font-size: 13px !important;
+}
+
+[data-testid="stSidebar"] strong {
+    color: #38BDF8 !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSidebar"] hr {
+    border-color: #1E2D4A !important;
+    margin: 16px 0 !important;
+}
+
+[data-testid="stSidebar"] .stTextInput input {
+    background-color: #0E223D !important;
+    color: #FFFFFF !important;
+    border: 1px solid #233A5E !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+}
+
+[data-testid="stSidebar"] .stTextInput input:focus {
+    border-color: #38BDF8 !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+}
+
+/* ==========================================================================
+   LIVELY EXECUTIVE HERO COMMAND BANNER
+   ========================================================================== */
+.executive-hero {
+    background: linear-gradient(135deg, #0A2540 0%, #0F3258 50%, #081B2E 100%);
+    border: 1px solid #1E3A5F;
+    border-radius: 14px;
+    padding: 26px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px -5px rgba(10, 37, 64, 0.25), 0 8px 10px -6px rgba(10, 37, 64, 0.15);
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.executive-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(10, 37, 64, 0) 70%);
+    pointer-events: none;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #38BDF8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-size: 34px !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.15 !important;
+    margin: 0 0 8px 0 !important;
+}
+
+.hero-title-sub {
+    font-weight: 400 !important;
+    color: #94A3B8 !important;
+    font-size: 26px !important;
+}
+
+.hero-desc {
+    font-size: 14px !important;
+    color: #CBD5E1 !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 960px;
+}
+
+/* ==========================================================================
+   CRISIS FLASH TICKER (High-Impact Red Alert Banner)
+   ========================================================================== */
+.crisis-flash {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-left: 6px solid #E11D48;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+}
+
+.crisis-flash-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #9F1239;
+    margin-bottom: 6px;
+}
+
+.crisis-flash-body {
+    font-size: 13.5px;
+    color: #1E293B;
+    line-height: 1.55;
+}
+
+/* ==========================================================================
+   LIVELY EXECUTIVE KPI TILES (High Contrast & Zero Truncation)
+   ========================================================================== */
+.kpi-tile {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+    transition: all 0.2s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08);
+    border-color: #94A3B8;
+}
+
+.kpi-tile-blue { border-top: 4px solid #0066CC; }
+.kpi-tile-red { border-top: 4px solid #E11D48; }
+.kpi-tile-amber { border-top: 4px solid #D97706; }
+.kpi-tile-green { border-top: 4px solid #059669; }
+
+.kpi-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748B;
+    margin-bottom: 4px;
+}
+
+.kpi-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0A2540;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 4px 0 6px 0;
+}
+
+.kpi-subtext {
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* ==========================================================================
+   ACTION CARDS WITH VIBRANT LIFE & CONTRAST
+   ========================================================================== */
+.action-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.04);
+    transition: all 0.15s ease;
+}
+
+.action-card:hover {
+    border-color: #94A3B8;
+    box-shadow: 0 8px 16px -2px rgba(15, 23, 42, 0.06);
+}
+
+.action-card-critical {
+    background: #FFFDFD;
+    border: 1px solid #FECDD3;
+    border-left: 6px solid #E11D48;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.06);
+}
+
+.action-card-warning {
+    background: #FFFEF9;
+    border: 1px solid #FDE68A;
+    border-left: 6px solid #D97706;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.06);
+}
+
+.action-card-success {
+    background: #FAFEF9;
+    border: 1px solid #A7F3D0;
+    border-left: 6px solid #059669;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.06);
+}
+
+.action-card-info {
+    background: #F8FAFF;
+    border: 1px solid #BAE6FD;
+    border-left: 6px solid #0066CC;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.06);
+}
+
+/* ==========================================================================
+   VIVID STATUS PILLS & GLOWING BADGES
+   ========================================================================== */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.pill-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pill-red {
+    background: #FFE4E6;
+    color: #9F1239;
+    border: 1px solid #FDA4AF;
+}
+.pill-red .pill-dot {
+    background: #E11D48;
+    box-shadow: 0 0 6px #E11D48;
+}
+
+.pill-amber {
+    background: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #FCD34D;
+}
+.pill-amber .pill-dot {
+    background: #D97706;
+    box-shadow: 0 0 6px #D97706;
+}
+
+.pill-green {
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #6EE7B7;
+}
+.pill-green .pill-dot {
+    background: #059669;
+    box-shadow: 0 0 6px #059669;
+}
+
+.pill-blue {
+    background: #E0F2FE;
+    color: #0369A1;
+    border: 1px solid #7DD3FC;
+}
+.pill-blue .pill-dot {
+    background: #0284C7;
+    box-shadow: 0 0 6px #0284C7;
+}
+
+.pill-gray {
+    background: #F1F5F9;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+}
+.pill-gray .pill-dot { background: #64748B; }
+
+/* ==========================================================================
+   CLEAN UNDERLINE TABS
+   ========================================================================== */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 36px !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid #E2E8F0 !important;
+    padding: 0 0 2px 0 !important;
+    margin-bottom: 26px !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 46px !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    color: #64748B !important;
+    font-weight: 600 !important;
+    font-size: 14.5px !important;
+    padding: 0 6px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: #0A2540 !important;
+    border-bottom: 3px solid #94A3B8 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: transparent !important;
+    color: #0066CC !important;
+    font-weight: 800 !important;
+    border-bottom: 3px solid #0066CC !important;
+}
+
+/* ==========================================================================
+   EXPANDERS & CONTROLS
+   ========================================================================== */
+.stExpander {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 10px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+div[data-testid="stDataFrame"] {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 10px !important;
+}
+
+.stSelectbox div[data-baseweb="select"] > div {
+    border-radius: 8px !important;
+    border-color: #CBD5E1 !important;
+    font-size: 13.5px !important;
+    background-color: #FFFFFF !important;
+}
