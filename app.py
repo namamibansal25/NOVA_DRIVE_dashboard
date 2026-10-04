@@ -17,7 +17,7 @@ from modules.case_study_view import render_case_study_view
 
 # Page Configuration
 st.set_page_config(
-    page_title="NovaDrive CRO Risk Intelligence Platform",
+    page_title="NovaDrive Technologies | CRO Risk Intelligence",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -44,27 +44,27 @@ except Exception as e:
 # ================= SIDEBAR NAVIGATION & CONTEXT =================
 with st.sidebar:
     st.markdown("""
-    <div style="padding-bottom: 8px;">
-        <span class="pill pill-blue"><span class="pill-dot"></span> NovaDrive CRO</span>
-        <h2 style="margin: 6px 0 2px 0; font-size: 16px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;">
-            Risk Intelligence
+    <div style="padding-bottom: 10px;">
+        <span class="pill pill-blue"><span class="pill-dot"></span> Executive Suite</span>
+        <h2 style="margin: 8px 0 2px 0; font-size: 18px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em;">
+            NovaDrive CRO
         </h2>
-        <div style="color: #94A3B8; font-size: 11px;">Executive Decision Support System</div>
+        <div style="color: #94A3B8; font-size: 11.5px; font-weight: 500;">Board Risk Oversight System</div>
     </div>
     """, unsafe_allow_html=True)
     st.divider()
 
-    st.markdown("<div style='font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: #94A3B8; margin-bottom: 8px;'>Portfolio Revenue Footprint</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: #94A3B8; margin-bottom: 8px;'>Active Portfolio Footprint</div>", unsafe_allow_html=True)
     st.markdown("""
-    - **Total Active Revenue:** **$1.560B**
+    - **Total Annual Revenue:** **$1.560B**
     - **P1 DriveCore Inverter:** $624M (Harbor & Plateau)
     - **P2 ChargeBridge Power:** $520M (Harbor & Coastal)
     - **P3 StoreLink Storage:** $416M (Plateau Works)
     """)
     st.divider()
 
-    st.markdown("<div style='font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: #94A3B8; margin-bottom: 8px;'>Document Dossier Lookup</div>", unsafe_allow_html=True)
-    quick_doc = st.text_input("Enter Document Reference ID:", placeholder="e.g., DOC-001, DOC-075").strip().upper()
+    st.markdown("<div style='font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: #94A3B8; margin-bottom: 8px;'>Regulatory & Contract Dossier</div>", unsafe_allow_html=True)
+    quick_doc = st.text_input("Lookup Filing / Contract ID:", placeholder="e.g. DOC-001, DOC-075, EV-001").strip().upper()
     if quick_doc:
         doc_hit = df_evid[df_evid["Evidence ID"] == quick_doc]
         if not doc_hit.empty:
@@ -76,49 +76,56 @@ with st.sidebar:
             st.markdown(f"<span class='pill pill-gray'>No record matching {quick_doc}</span>", unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("<div style='font-size: 11px; color: #64748B;'>Data Provenance: Clean Research Data Pack v2.0<br>Strict Confidential — Board Audit & Risk Committee</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size: 11px; color: #64748B; line-height: 1.45;'>Data Provenance: Clean Research Data Pack v2.0<br>Confidential — Board Audit & Risk Committee</div>", unsafe_allow_html=True)
 
-# ================= EXECUTIVE MASTHEAD =================
+# ================= EXECUTIVE MASTHEAD (Large, Authoritative, Commanding) =================
 st.markdown("""
-<div style="display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid #E2E8F0;">
-    <div>
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-            <span class="pill pill-blue"><span class="pill-dot"></span> Board Audit & Risk Committee</span>
-            <span style="color: #CBD5E1;">|</span>
-            <span style="color: #64748B; font-size: 12px; font-weight: 500;">Enterprise Risk Advisory</span>
+<div class="masthead-wrapper">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+        <div>
+            <div class="masthead-kicker">
+                <span class="pill-dot" style="background: #0066CC;"></span>
+                Enterprise Risk Management & Supply Chain Resilience
+            </div>
+            <h1 class="masthead-title">
+                NovaDrive Technologies
+                <span class="masthead-title-sub">| Chief Risk Officer Decision Platform</span>
+            </h1>
+            <p class="masthead-subtitle">
+                Forensic multi-tier supply chain reconstruction, primary regulatory disclosures audit, real-time threat triage, and alternate supplier qualification.
+            </p>
         </div>
-        <h1 style="margin: 0; font-size: 22px; font-weight: 700; color: #0A2540; letter-spacing: -0.025em;">
-            NovaDrive Technologies <span style="font-weight: 400; color: #64748B;">| Chief Risk Officer Decision-Support Platform</span>
-        </h1>
-        <p style="margin: 3px 0 0 0; color: #64748B; font-size: 12.5px;">
-            Evidence-based supply chain mapping, multi-tier chokepoint diagnostics, real-time threat triage, and alternate qualification.
-        </p>
-    </div>
-    <div style="text-align: right;">
-        <span class="pill pill-red"><span class="pill-dot"></span> Active Alert: Zone Z01 Basin</span>
-        <div style="color: #94A3B8; font-size: 11px; margin-top: 4px;">Classification: Strict Confidential</div>
+        <div style="text-align: right; min-width: 200px;">
+            <span class="pill pill-red"><span class="pill-dot"></span> Active Advisory: Zone Z01 Basin</span>
+            <div style="color: #64748B; font-size: 11.5px; font-weight: 600; margin-top: 6px;">
+                Classification: Strict Confidential
+            </div>
+            <div style="color: #94A3B8; font-size: 11px; margin-top: 2px;">
+                Target: Board of Directors Oversight
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="tldr-box">
-    <span class="tldr-tag">CRISIS TL;DR</span>
-    <strong>Surface dual-sourcing is an illusion.</strong> Aster (60%) and Boreal (40%) are both 100% owned subsidiaries of CommonSpan Holdings (<code>DOC-075</code>). Sub-tier dies (IonPeak, $1.56B) and bare PCBs (Jade, $1.56B) sit in flood zone Z01 with zero qualified backups. <strong>100% of NovaDrive annual revenue is exposed.</strong>
+    <span class="tldr-tag">CRISIS EXECUTIVE SUMMARY</span>
+    <strong>Surface dual-sourcing is an illusion.</strong> Tier-1 suppliers Aster Power (60%) and Boreal Power (40%) are both 100% owned subsidiaries of CommonSpan Holdings (<code>DOC-075</code>). Sub-tier power dies (IonPeak, $1.560B reach) and bare PCBs (Jade, $1.560B reach) are sole-sourced inside the Zone Z01 flood basin with zero qualified alternates. <strong>100% of NovaDrive annual revenue is exposed.</strong>
 </div>
 """, unsafe_allow_html=True)
 
-# Executive KPI Ribbon (Crisp 4 metrics with breathing room)
+# Executive KPI Ribbon (High visual breathing room)
 k1, k2, k3, k4 = st.columns(4)
 k1.metric("Portfolio Revenue Base", "$1.560B", "100% Portfolio (P1-P3)")
 k2.metric("Critical Upstream Chokepoints", "3 Core Nodes", "IonPeak, Jade, Meridian")
 k3.metric("Zone Z01 Flood Exposure", "5 Key Facilities", "Active Advisory (EV-001)", delta_color="inverse")
 k4.metric("Re-qualification Runway", "12 - 16 Weeks", "Active Sprint Required", delta_color="off")
 
-st.markdown("<div style='margin-bottom: 12px;'></div>", unsafe_allow_html=True)
+st.markdown("<div style='margin-bottom: 8px;'></div>", unsafe_allow_html=True)
 
 # ================= EXECUTIVE NAVIGATION TABS =================
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Executive Risk Roster",
-    "Multi-Tier Architecture",
+    "Multi-Tier Network Flow",
     "Threat Triage & Event Log",
     "Alternate Qualification",
     "Disruption War Room"
@@ -141,8 +148,8 @@ with tab5:
 
 # ================= EXECUTIVE FOOTER =================
 st.markdown("""
-<div style="margin-top: 24px; border-top: 1px solid #E2E8F0; padding-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #94A3B8;">
+<div style="margin-top: 32px; border-top: 1px solid #E2E8F0; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: #94A3B8;">
     <div>NovaDrive Technologies Decision Support Platform | Grounded in Verified Regulatory Filings, Program Awards & Shipping Records</div>
-    <div>Confidential — For Internal Governance Use Only</div>
+    <div>Strict Confidential — For Internal Governance & Audit Committee Use Only</div>
 </div>
 """, unsafe_allow_html=True)
